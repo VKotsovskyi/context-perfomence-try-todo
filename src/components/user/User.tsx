@@ -1,11 +1,13 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { UserContext } from '../../contexts/UserContextWrapper';
-import { editUserName } from '../../actions/userActions'
+import useEditUserName from '../../hooks/useEditUserName'
+
 
 const User = () => {
-  const { user, dispatch } = useContext(UserContext)
+  const { user } = useContext(UserContext)
+  const editUserName = useEditUserName()
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    editUserName(dispatch, e.target.value)
+    editUserName(e.target.value)
   }
   return (
     <div>

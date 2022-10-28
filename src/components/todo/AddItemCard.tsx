@@ -1,7 +1,5 @@
-import React, { useState, useContext } from 'react';
-import { TodoContext } from '../../contexts/TodoContextWrapper';
-import { addListItem } from '../../actions/todoActions';
-
+import React, { useState } from 'react';
+import useAddListItem from '../../hooks/useAddListItem';
 
 type Props = {
   showAddButton: () => void,
@@ -9,12 +7,12 @@ type Props = {
 
 const AddItemCard = ({ showAddButton }: Props) => {
   const [ itemName, setItemName ] = useState('')
-  const { dispatch } = useContext(TodoContext);
+  const addListItem = useAddListItem()
   const handleItemName = (e: React.ChangeEvent<HTMLInputElement>) => {
     setItemName(e.target.value)
   }
   const handleSave = () => {
-    addListItem(dispatch, itemName)
+    addListItem(itemName)
     showAddButton()
   }
   return (
