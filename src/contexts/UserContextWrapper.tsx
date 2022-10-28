@@ -1,12 +1,12 @@
-import React, { createContext, useState, Dispatch } from 'react';
-import todoReducer from '../reducers/todoReducer'
+import React, { createContext, useReducer } from 'react';
+import userReducer from '../reducers/userReducer'
 import { UserContextType } from '../types/contextTypes';
 
 export const UserContext = createContext<UserContextType>({
   user: {
     name: ''
   },
-  setUser: () => {}
+  dispatch: () => {}
 });
 
 
@@ -15,9 +15,9 @@ type Props = {
 };
 
 function UserContextWrapper({ children }: Props) {
-  const [user, setUser] = useState({name: ''});
+  const [user, dispatch] = useReducer(userReducer, { name: '' });
   return (
-    <UserContext.Provider value={{user, setUser}}>
+    <UserContext.Provider value={{user, dispatch}}>
       { children }
     </UserContext.Provider>
   );

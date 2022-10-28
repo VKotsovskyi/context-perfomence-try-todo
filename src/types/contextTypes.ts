@@ -9,5 +9,10 @@ export type ListContext = {
 }
 export type UserContextType = {
   user: User,
-  setUser: Dispatch<SetStateAction<{name: string}>> 
+  dispatch: React.Dispatch<any>
+}
+
+export type Action = {
+  type: string,
+  payload: any
 }
