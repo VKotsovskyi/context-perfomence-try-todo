@@ -1,14 +1,11 @@
 import React, { useState, useContext } from 'react';
 import { UserContext } from '../../contexts/UserContextWrapper';
-import { EDIT_USER_NAME } from '../../reducers/userReducer'
+import { editUserName } from '../../actions/userActions'
 
 const User = () => {
   const { user, dispatch } = useContext(UserContext)
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch({
-      type: EDIT_USER_NAME,
-      payload: e.target.value
-    })
+    editUserName(dispatch, e.target.value)
   }
   return (
     <div>

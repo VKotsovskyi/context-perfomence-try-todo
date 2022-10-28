@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { TodoContext } from '../../contexts/TodoContextWrapper';
-import { ADD_TO_LIST } from '../../reducers/todoReducer'
+import { addListItem } from '../../actions/todoActions';
+
 
 type Props = {
   showAddButton: () => void,
@@ -13,10 +14,7 @@ const AddItemCard = ({ showAddButton }: Props) => {
     setItemName(e.target.value)
   }
   const handleSave = () => {
-    dispatch({
-      type: ADD_TO_LIST,
-      payload: itemName
-    })
+    addListItem(dispatch, itemName)
     showAddButton()
   }
   return (
