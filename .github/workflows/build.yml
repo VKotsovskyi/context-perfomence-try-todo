@@ -14,14 +14,6 @@ jobs:
           node-version: 12.x
       - name: Install dependencies
         run: npm install    
-      - name: Run Pretier
-        run: npm run format    
-      - name: Run Linter
-        run: npm run lint
-      - name: Test
-        run: npm test
-        env:
-          CI: true
       - name: Generate build
         run: npm run build
       # Share artifact inside workflow
