@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import useAddListItem from '../../hooks/useAddListItem';
+import { ActionButton, Input } from './styled'
 
 type Props = {
   showAddButton: () => void,
@@ -17,8 +18,8 @@ const AddItemCard = ({ showAddButton }: Props) => {
   }
   return (
     <div>
-      <input type="text"  name="inputName" value={itemName} onChange={handleItemName} />
-      <button onClick={handleSave}>Save</button>
+      <Input type="text"  name="inputName" value={itemName} onChange={handleItemName} />
+      <ActionButton onClick={handleSave}>Save</ActionButton>
     </div>
   );
 };

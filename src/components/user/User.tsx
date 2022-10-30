@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { UserContext } from '../../contexts/UserContextWrapper';
 import useEditUserName from '../../hooks/useEditUserName'
+import { UserInputContainer } from './styled'
 
 
 const User = () => {
@@ -10,9 +11,15 @@ const User = () => {
     editUserName(e.target.value)
   }
   return (
-    <div>
-      <input type="text" name="userName" value={user.name} onChange={handleChange} />
-    </div>
+    <UserInputContainer>
+      <input
+        type="text"
+        name="userName"
+        value={user.name}
+        onChange={handleChange}
+        placeholder="Enter your name"
+      />
+    </UserInputContainer>
   );
 };
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import AddItemCard from './AddItemCard';
+import { ActionButton } from './styled'
 
 const AddItem = () => {
   const [addItem, setAddItem] = useState(false)
@@ -14,7 +15,7 @@ const AddItem = () => {
       {
         addItem
         ? <AddItemCard showAddButton={showAddButton}/>
-        : <button onClick={handleAddItem}>Add Item</button>
+        : <ActionButton onClick={handleAddItem}>Add Item</ActionButton>
       }
     </div>
   );

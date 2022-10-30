@@ -1,13 +1,15 @@
 import React from 'react';
 import TodoBlock from './TodoBlock';
+import { TodoContainer } from './styled'
+import { getRandomQuote } from './utils'
+
 const Todo = () => {
-  console.log('render')
   return (
-    <>
-      <h1>This is very important TODO</h1>
-      <p>More important text just to pretend that all of this makes sence.</p>
+    <TodoContainer>
+      <h1>TODO</h1>
+      <p>{getRandomQuote()}</p>
       <TodoBlock />
-    </>
+    </TodoContainer>
   );
 };
 

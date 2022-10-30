@@ -1,15 +1,16 @@
 import React from 'react';
-import { ListItem } from "../../types/todoTypes"
+import { ListItem as ListItemType } from "../../types/todoTypes"
+import { ListItem } from './styled'
 
 type Props = {
-  item: ListItem,
+  item: ListItemType,
 };
 
 const TodoItem = ({ item }: Props) => {
   return (
-    <li>
+    <ListItem>
         {item.name}
-    </li>
+    </ListItem>
   );
 };
 
