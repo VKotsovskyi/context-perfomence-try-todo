@@ -17,7 +17,7 @@ jobs:
       - name: Run Pretier
         run: npm run format    
       - name: Run Linter
-        run: npm run linter
+        run: npm run lint
       - name: Test
         run: npm test
         env:
