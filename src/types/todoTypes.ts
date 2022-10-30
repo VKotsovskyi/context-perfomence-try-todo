@@ -1,5 +1,5 @@
 export type ListItem = {
-  id: number,
-  name: string,
-  isDone: boolean
-}
+  id: number;
+  name: string;
+  isDone: boolean;
+};

@@ -21,6 +21,6 @@ const quoteList = [
 ]
 
 export const getRandomQuote = () => {
-  const rendomIndex = Math.floor(Math.random() * (quoteList.length - 1))
-  return quoteList[rendomIndex]
+  const randomIndex = Math.floor(Math.random() * (quoteList.length - 1))
+  return quoteList[randomIndex]
 }
