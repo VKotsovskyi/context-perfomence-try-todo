@@ -1,7 +1,6 @@
 on:
-  push:
-    tags:
-      - '*'
+  pull_request:
+    types: [opened, reopened]
 
 jobs:
   build:
@@ -19,3 +18,9 @@ jobs:
         run: npm run format    
       - name: Run Linter
         run: npm run lint
+      # Share artifact inside workflow
+      - name: Share artifact inside workflow
+        uses: actions/upload-artifact@v1
+        with:
+          name: react-github-actions-build
+          path: build
