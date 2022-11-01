@@ -1,9 +1,9 @@
 import { Dispatch } from "react";
-import { ListItem } from "./todoTypes";
+import { TasksGroupedByStatus } from "./taskTypes";
 import { User } from "./userTypes";
 
 export type ListContext = {
-  todoItems: ListItem[];
+  tasks: TasksGroupedByStatus;
   dispatch: Dispatch<any>;
 };
 export type UserContextType = {
