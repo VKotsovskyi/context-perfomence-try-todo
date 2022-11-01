@@ -1,10 +1,10 @@
-import { useContext } from 'react';
-import { TodoContext } from '../../contexts/TodoContextWrapper';
-import { addListItem } from '../../actions/todoActions';
+import { useContext } from "react";
+import { TasksContext } from "../../contexts/TasksContextWrapper";
+import { addListItem } from "../../actions/tasksActions";
 
 const useAddListItem = () => {
-  const { dispatch } = useContext(TodoContext)
-  return addListItem(dispatch)
-}
+  const { dispatch } = useContext(TasksContext);
+  return addListItem(dispatch);
+};
 
 export default useAddListItem;

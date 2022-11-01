@@ -1,14 +1,14 @@
-import { useContext, ChangeEvent } from 'react';
-import { UserContext } from '../../contexts/UserContextWrapper';
-import useEditUserName from '../../hooks/useEditUserName'
-import { UserInputContainer } from './styled'
+import { useContext, ChangeEvent } from "react";
+import { UserContext } from "../../contexts/UserContextWrapper";
+import useEditUserName from "../../hooks/useEditUserName";
+import { UserInputContainer } from "./styled";
 
 const User = () => {
-  const { user } = useContext(UserContext)
-  const editUserName = useEditUserName()
+  const { user } = useContext(UserContext);
+  const editUserName = useEditUserName();
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    editUserName(e.target.value)
-  }
+    editUserName(e.target.value);
+  };
   return (
     <UserInputContainer>
       <input

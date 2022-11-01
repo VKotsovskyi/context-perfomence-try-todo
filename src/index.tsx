@@ -1,13 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './components/app/App';
-import TodoContext from './contexts/TodoContextWrapper';
-import UserContext from './contexts/UserContextWrapper';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./components/app/App";
+import TodoContext from "./contexts/TasksContextWrapper";
+import UserContext from "./contexts/UserContextWrapper";
+import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
